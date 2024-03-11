@@ -1,7 +1,7 @@
 package com.example.assignmentamity
 
 import app.cash.turbine.test
-import com.example.assignmentamity.data.ToDoResponse
+import com.example.assignmentamity.data.ToDoEntity
 import com.example.assignmentamity.data.TodoRepositoryImpl
 import com.example.assignmentamity.data.local.TodoLocalDataSource
 import com.example.assignmentamity.data.network.TodoNetworkDataSource
@@ -25,7 +25,7 @@ class TodoRepositoryTest {
     fun `test fetchToDoList and store items in database`() = runTest {
         //arrange
         val mockList = listOf(
-            ToDoResponse(1, 1, "Task 1", false)
+            ToDoEntity(1, 1, "Task 1", false)
         )
 
         given(networkDataSource.fetchTodoLists()).willReturn(mockList)

@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
 @Entity(tableName = "todos")
-data class ToDoResponse(
+data class ToDoEntity(
     @Json(name = "userId")
     val userId: Long,
 

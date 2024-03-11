@@ -5,5 +5,5 @@ import retrofit2.http.GET
 interface ToDoService {
 
     @GET("todos")
-    suspend fun getToDoList(): List<ToDoResponse>
+    suspend fun getToDoList(): List<ToDoEntity>
 }

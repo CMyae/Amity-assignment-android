@@ -1,6 +1,6 @@
 package com.example.assignmentamity
 
-import com.example.assignmentamity.data.ToDoResponse
+import com.example.assignmentamity.data.ToDoEntity
 import com.example.assignmentamity.data.ToDoService
 import com.example.assignmentamity.data.network.TodoNetworkDataSourceImpl
 import com.google.common.truth.Truth
@@ -20,7 +20,7 @@ class TodoNetworkDataSourceImplTest {
 
         given(service.getToDoList()).willReturn(
             listOf(
-                ToDoResponse(1, 1, "task 1", true)
+                ToDoEntity(1, 1, "task 1", true)
             )
         )
 

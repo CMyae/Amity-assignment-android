@@ -1,6 +1,6 @@
 package com.example.assignmentamity.data.local
 
-import com.example.assignmentamity.data.ToDoResponse
+import com.example.assignmentamity.data.ToDoEntity
 import com.example.assignmentamity.domain.ToDoItem
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 interface TodoLocalDataSource {
 
-    suspend fun insertAllTodo(items: List<ToDoResponse>)
+    suspend fun insertAllTodo(items: List<ToDoEntity>)
 
     fun getTodoList(): Flow<List<ToDoItem>>
 }
@@ -17,7 +17,7 @@ class TodoLocalDataSourceImpl @Inject constructor(
     private val toDoDao: ToDoDao
 ) : TodoLocalDataSource {
 
-    override suspend fun insertAllTodo(items: List<ToDoResponse>) {
+    override suspend fun insertAllTodo(items: List<ToDoEntity>) {
         toDoDao.insertAll(items)
     }
 

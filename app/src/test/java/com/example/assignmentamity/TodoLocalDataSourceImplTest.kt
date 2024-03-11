@@ -1,7 +1,7 @@
 package com.example.assignmentamity
 
 import app.cash.turbine.test
-import com.example.assignmentamity.data.ToDoResponse
+import com.example.assignmentamity.data.ToDoEntity
 import com.example.assignmentamity.data.local.ToDoDao
 import com.example.assignmentamity.data.local.TodoLocalDataSourceImpl
 import com.google.common.truth.Truth
@@ -21,7 +21,7 @@ class TodoLocalDataSourceImplTest {
         val dataSource = TodoLocalDataSourceImpl(dao)
 
         val mockList = listOf(
-            ToDoResponse(1, 1, "task1", false)
+            ToDoEntity(1, 1, "task1", false)
         )
         given(dao.getTodoList()).willReturn(flowOf(mockList))
 
